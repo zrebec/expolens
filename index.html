@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="favicon.svg" type="image/svg+xml" />
+		<link rel="stylesheet" href="style.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400&display=swap" rel="stylesheet" />
+		<title>Expolens - Image Resizer</title>
+	</head>
+	<body>
+		<div class="container">
+			<main>
+				<form class="form" action="index.html" method="post">
+					<fieldset>
+						<legend>Directory settings</legend>
+						<div>
+							<label>Source Directory</label>
+							<input id="source-directory" type="text" maxlength="255" placeholder="~/Pictures/Hawai_Vacation/" />
+							<button class="btn" for="source-directory" type="button" role="button">Browse</button>
+						</div>
+						<div>
+							<label>Destination Directory</label>
+							<input
+								id="destination-directory"
+								type="text"
+								maxlength="255"
+								placeholder="~/Pictures/Hawai_Vacation/Resized/"
+							/>
+							<button class="btn" for="destination-directory" type="button" role="button">Browse</button>
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>Output settings</legend>
+						<div>
+							<!-- Maximum supported resoltuion is 12k (11520x4320 px) -->
+							<label>Max output width</label>
+							<input id="max-width" type="number" min="4" max="11520" placeholder="1920" />
+							<button class="btn" for="max-width" type="button" role="button">Browse</button>
+						</div>
+						<div>
+							<label>Max output height</label>
+							<input id="max-height" type="number" min="4" max="4320" placeholder="1080" />
+							<button class="btn" for="max-width" type="button" role="button">Browse</button>
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>Profile settings</legend>
+						<div>
+							<label>Profiles</label>
+							<select name="profile">
+								<option value="default">Only resize</option>
+								<option value="convert">Only convert format</option>
+								<option value="default">Resize and convert format</option>
+							</select>
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>Operations</legend>
+						<div class="grid">
+							<button type="submit" class="btn btn-operation btn-start">Start</button>
+							<button type="button" class="btn btn-operation btn-pause" disabled>Pause</button>
+							<button type="button" class="btn btn-operation btn-stop" disabled>Stop</button>
+						</div>
+					</fieldset>
+				</form>
+			</main>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,149 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--primary-color: #3498db;
+	--secondary-color: #f0f0f0;
+	--btn-start-bg: #2ecc71;
+	--btn-pause-bg: #f1c40f;
+	--btn-stop-bg: #e74c3c;
+	--btn-stop-text: white;
+	--btn-pause-text: #34495e;
+	--btn-start-text: white;
+	--input-border-clr: #bdc3c7;
+	--fieldset-border-color: #95a5a6;
+	--padding-sm: 0.3rem;
+	--padding-md: 0.6rem;
+	--padding-lg: 1rem;
+	--margin-sm: 0.5rem;
+	--margin-md: 1rem;
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	font-family: "Poppins", sans-serif;
+}
+
+.container {
+	display: grid;
+	place-items: center;
+	width: 100%;
+	max-width: 1080px;
+	margin: 0 auto;
+	padding: 1rem;
+	min-height: 100dvh;
+}
+
+main {
+	width: 100%;
+}
+
+.form {
+	& fieldset {
+		border: 0.1rem dotted var(--fieldset-border-color);
+		padding: var(--padding-lg);
+		display: grid;
+		gap: 1rem;
+	}
+
+	& label {
+		padding-right: 0.5rem;
+		&::after {
+			content: ": ";
+		}
+	}
+
+	& div {
+		display: grid;
+		grid-template-columns: 25% 2fr auto;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	& input,
+	& select,
+	& button {
+		padding: 1rem 0.3rem;
+		font-size: 0.9rem;
+	}
+
+	& input,
+	& select {
+		font-family: "Fira Code", Consolas, "Courier New", monospace;
+		border: 1px solid var(--input-border-clr);
+	}
+
+	& select {
+		grid-column: 2 / -1;
+		appearance: none;
+		background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+		background-repeat: no-repeat;
+		background-position: right 0.7em top 50%;
+		background-size: 0.65em auto;
+	}
+
+	& .grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1rem;
+	}
+
+	& .btn {
+		border: 1px dashed darkgoldenrod;
+		color: var(--primary-color);
+		cursor: pointer;
+		font-family: "Poppins", sans-serif;
+		font-size: 0.8rem;
+		background-color: var(--secondary-color);
+
+		&::before {
+			content: "\1F4C1";
+		}
+
+		&.btn-operation:disabled {
+			background-color: var(--secondary-color);
+			opacity: 0.8;
+			color: black;
+		}
+
+		&.btn-operation {
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+
+		&.btn-start {
+			background-color: var(--btn-start-bg);
+			color: var(--btn-start-text);
+
+			&::before {
+				content: "▶";
+				margin-right: 0.5rem;
+			}
+		}
+
+		&.btn-pause {
+			background-color: var(--btn-pause-bg);
+			color: var(--btn-pause-text);
+
+			&::before {
+				content: "⏸";
+				margin-right: 0.5rem;
+			}
+		}
+
+		&.btn-stop {
+			background-color: var(--btn-stop-bg);
+			color: var(--btn-stop-text);
+
+			&::before {
+				content: "⏹";
+				margin-right: 0.5rem;
+			}
+		}
+	}
+}
